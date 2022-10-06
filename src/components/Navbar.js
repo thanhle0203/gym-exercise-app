@@ -7,7 +7,8 @@ const Navbar = () => {
     <Stack 
         direction='row' 
         justifyContent='space-around' 
-        sx={{ gap: { sm: '122px', xs: '40px'}, mt: { sm: '32px', xs: '20px'}}}
+        sx={{ gap: { sm: '122px', xs: '40px'}, mt: { sm: '32px', xs: '20px'}, justifyContent: 'none' }}
+        px='20px'
     >
         <Link to="/">
             <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQlO4usncyzTjHVOYxWAsqFLepfsKKOgpoPRtYTgokxFJlY7KmLHCWevV84npPnfCxPLyE&usqp=CAU" alt='logo' 
