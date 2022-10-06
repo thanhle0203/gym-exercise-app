@@ -1,4 +1,5 @@
 import { Box, Typography } from '@mui/material'
+import Button from '@mui/material/Button'
 import React from 'react'
 
 const HeroBanner = () => {
@@ -12,14 +13,19 @@ const HeroBanner = () => {
         Fitness Club
       </Typography>
 
-      <Typography>
+      <Typography fontWeight={700} 
+        sx={{ fontSize: { lg: '44px', xs: '40px'} }}
+      >
         Sweat, Smile <br /> and Repeat
       </Typography>
 
-      <Typography>
+      <Typography fontSize='22px' fontWeight='35px'>
         Check out the most effective exercises
       </Typography>
 
+      <Button variant='contained' color='error'>
+        Explore Exercises
+      </Button>
     </Box>
   )
 }
