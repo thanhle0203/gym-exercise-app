@@ -4,12 +4,38 @@ import { Box, Stack, width } from '@mui/system'
 
 const SearchExercises = () => {
   const [search, setSearch] = useState('')
+  const [data, setData] = useState([])
 
   const handleSearch = async () => {
     if (search) {
-        //const exercisesData = await fetchData();
+        const exercisesData = await fetchData(data, getData);
+        
+        console.log(exercisesData);
     }
   }
+
+  const getData=()=>{
+    fetch('./data/data.json'
+    ,{
+      headers : { 
+        'Content-Type': 'application/json',
+        'Accept': 'application/json'
+       }
+    }
+    )
+      .then(function(response){
+        console.log(response)
+        return response.json();
+      })
+      .then(function(myJson) {
+        console.log(myJson);
+        setData(myJson)
+      });
+    }
+    
+    useEffect(()=>{
+        getData()
+    },[])
   
   return (
     <Stack alignItems='center' mt='37px' 
@@ -51,7 +77,7 @@ const SearchExercises = () => {
                     position: 'absolute',
                     right: '0'
                 }}
-                onClick=
+                onClick={}
             >
                 Search
             </Button>
