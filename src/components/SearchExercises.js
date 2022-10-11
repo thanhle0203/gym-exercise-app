@@ -1,83 +1,39 @@
-import React, {useState} from 'react'
-import { TextField, Typography, Button } from '@mui/material'
-import { Box, Stack, width } from '@mui/system'
+import { Box, Button, TextField, Typography } from '@mui/material'
+import { Stack } from '@mui/system'
+import React, { useEffect, useState} from 'react'
 
 const SearchExercises = () => {
-  const [search, setSearch] = useState('')
-  const [data, setData] = useState([])
-
-  const handleSearch = async () => {
-    if (search) {
-        const exercisesData = await fetchData(data, getData);
-        
-        console.log(exercisesData);
-    }
-  }
-
-  const getData=()=>{
-    fetch('./data/data.json'
-    ,{
-      headers : { 
-        'Content-Type': 'application/json',
-        'Accept': 'application/json'
-       }
-    }
-    )
-      .then(function(response){
-        console.log(response)
-        return response.json();
-      })
-      .then(function(myJson) {
-        console.log(myJson);
-        setData(myJson)
-      });
-    }
-    
-    useEffect(()=>{
-        getData()
-    },[])
-  
   return (
-    <Stack alignItems='center' mt='37px' 
-    justifyContent='center' p='20px'
-    >
+    <Stack alignItems="center" mt='37px' justifyContent="center" p="20px">
         <Typography fontWeight={700} 
-        sx={{ fontSize: { lg: '44px', xs: '30px' }}}
-        mb='50px' textAlign='center'
-        >
-            Awesome Exercises You Should <br/> Know
+            sx={{ fontSize: { lg: '44px', xs: '30px' }}}
+            md="50px" textAlign="center"
+            >
+            Awesome Exercises You <br/> Should Know
         </Typography>
 
-        <Box position='relative' mb='72px'>
+        <Box position="relative" mb="72px">
             <TextField 
-                sx={{ 
-                    input: {
+                sx={{
+                    input: { 
                         fontWeight: '700',
                         border: 'none', 
                         borderRadius: '4px'
                     },
-                    width: { lg: '800px', xs: '350px'},
-                    backgroundColor:'#fff',
+                    width: { lg: '1170px', xs: '350px' },
+                    backgroundColor: '#fff',
                     borderRadius: '40px'
                 }}
-                height='76px'
-                value={search}
-                onChange={(e) => setSearch(e.target.value.toLowerCase())}
-                placeholder="Search Exercises"
-                type='text'
+                height="76px"
+                value=""
+                onChange={(e) => {} }
+                placeholder="Search for an Exercise"
+                type="text"
             />
-    
-            <Button className="search-btn" variant='contained' color='error'
+            <Button className='search-btn'
                 sx={{
-                    color:'#fff',
-                    textTransform: 'none',
-                    width: { lg: '175px', sx: '80px'},
-                    fontSize: { lg: '20px', xs: '14px'},
-                    height: '56px',
-                    position: 'absolute',
-                    right: '0'
+                    bgcolor: "#FF2625"
                 }}
-                onClick={}
             >
                 Search
             </Button>

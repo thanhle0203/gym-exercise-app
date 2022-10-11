@@ -1,4 +1,4 @@
-[
+{ "exercises": [
   {
     "name": "Dumbbell Squats",
     "id": "ad8c0ac7-aba7-4694-ba8a-496b22911d51",
@@ -1792,3 +1792,4 @@
     }
   }
 ]
+}
