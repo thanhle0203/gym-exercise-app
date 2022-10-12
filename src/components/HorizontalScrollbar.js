@@ -4,8 +4,7 @@ import React from 'react'
 import { ScrollMenu, VisibilityContext } from 'react-horizontal-scrolling-menu';
 import BodyPart from './BodyPart'
 
-const HorizontalScrollbar = ({ data, bodyPart, setBodyPart }) => {
-  return (
+const HorizontalScrollbar = ({ data, bodyPart, setBodyPart }) => (
     <ScrollMenu>
         {data.map((item) => (
             <Box 
@@ -16,14 +15,14 @@ const HorizontalScrollbar = ({ data, bodyPart, setBodyPart }) => {
             >
                 <BodyPart 
                     item={item}
-                    bodyPart={bodyPart}
                     setBodyPart={setBodyPart}
+                    bodyPart={bodyPart}
                  />
             </Box> 
             )
         )}
     </ScrollMenu>
-  )
-}
+);
+
 
 export default HorizontalScrollbar
