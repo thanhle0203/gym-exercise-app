@@ -1,4 +1,4 @@
-import { Button } from '@mui/material'
+import { Button, Typography } from '@mui/material'
 import { Stack } from '@mui/system'
 import React from 'react'
 import { Link } from 'react-router-dom'
@@ -24,6 +24,13 @@ const ExerciseCard = ({ exercise }) => {
             >
               {exercise.target}
             </Button>
+
+            <Typography
+              ml="21px" color="#000" fontWeight="bold" mt="11px"
+              pb="10px" textTransform="capitalize" fontSize="22px"
+            >
+                {exercise.name}
+            </Typography>
 
         </Stack>
     </Link>
