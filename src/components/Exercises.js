@@ -3,10 +3,10 @@ import { Box } from '@mui/system'
 import React from 'react'
 
 import { exerciseOptions, fetchData } from '../utils/fetchData'
+import ExerciseCard from './ExerciseCard'
 
 const Exercises = ({ exercises, setExercises, }) => {
-  console.log(exercises);
-  
+
   return (
     <Box id="exercises"
       sx={{mt: {lg: '100px' }}}
@@ -20,8 +20,8 @@ const Exercises = ({ exercises, setExercises, }) => {
         <Stack direction='row' sx={{ gap: { lg: '110px', xs: '50px' }}}
           flexWrap="wrap" justifyContent='center'
         >
-          {exercises.map((exercises, index) => (
-            <p>{exercises.name}</p>
+          {exercises.map((exercise, index) => (
+            <ExerciseCard key={index} exercise={exercise} />
           ))}
         </Stack>
     </Box>
