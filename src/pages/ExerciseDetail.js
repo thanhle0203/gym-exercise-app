@@ -12,6 +12,8 @@ import { exerciseOptions, fetchData, youtubeOptions } from '../utils/fetchData';
 const ExerciseDetail = () => {
   const [exerciseDetail, setExerciseDetail] = useState({});
   const [exerciseVideos, setExerciseVideos] = useState({});
+  const [targetMuscleExercises, setTargetMuscleExercises] = useState({});
+  const [equipmentExercises, setEquipmentExercises] = useState({});
   const { id } = useParams();
 
   useEffect(() => {
@@ -25,6 +27,14 @@ const ExerciseDetail = () => {
       const exerciseVideoData = await fetchData(`${youtubeSearchUrl}/search?query=${exerciseDetailData.name}`, youtubeOptions);
       setExerciseVideos(exerciseVideoData.contents);
 
+      const targetMuscleExercisesData = await fetchData(`${exerciseDbUrl}/exercises/target/${exerciseDetailData.target}`, 
+      exerciseOptions);
+      setTargetMuscleExercises(targetMuscleExercisesData);
+
+      const equipmentExercisesData = await fetchData(`${exerciseDbUrl}/exercises/equipment/${exerciseDetailData.equipment}`, 
+      exerciseOptions);
+      setEquipmentExercises(equipmentExercises);
+      
     }
     fetchExercisesData();
   }, [id]);
